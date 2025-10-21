@@ -1,12 +1,9 @@
 sequenceDiagram
-    participant user as User
     participant browser as Browser
     participant server as Server
 
-    Note left of user: Użytkownik wpisuje treść nowej notatki
-    user->>browser: Wpisuje tekst w polu notatki
-    user->>browser: Kliknięcie guzika "Zapisz"
-
+    Note left of browser: Użytkownik wpisuje treść notatki i klika "Zapisz"
+    
     Note right of browser: Przeglądarka wysyła żądanie POST do serwera
     browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/notes
     activate server
