@@ -1,8 +1,13 @@
 sequenceDiagram
     participant browser as Przeglądarka
     participant server as Serwer
+    
+    Note over browser: Użytkownik wpisuje nową notatkę i klika "Zapisz"
+    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note
+    activate server
+    server-->>browser: HTML z aktualną listą notatek
+    deactivate server
 
-    Note over browser: Użytkownik otwiera stronę aplikacji
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/notes
     activate server
     server-->>browser: HTML dokument (strona główna)
@@ -18,18 +23,9 @@ sequenceDiagram
     server-->>browser: Plik JavaScript
     deactivate server
 
-    Note over browser: Przeglądarka pobiera listę notatek
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
     activate server
     server-->>browser: JSON z listą notatek
-    deactivate server
-
-    Note over browser: Przeglądarka renderuje listę notatek
-
-    Note over browser: Użytkownik wpisuje nową notatkę i klika "Zapisz"
-    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note
-    activate server
-    server-->>browser: HTML z aktualną listą notatek
     deactivate server
 
     Note over browser: Przeglądarka renderuje ponownie całą listę notatek
