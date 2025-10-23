@@ -2,34 +2,11 @@ sequenceDiagram
     participant browser as Przeglądarka
     participant server as Serwer
 
-    Note over browser: Użytkownik otwiera aplikację SPA
-    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/spa
-    activate server
-    server-->>browser: HTML dokument SPA
-    deactivate server
-
-    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.css
-    activate server
-    server-->>browser: Plik CSS
-    deactivate server
-
-    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.js
-    activate server
-    server-->>browser: Plik JavaScript SPA
-    deactivate server
-
-    Note over browser: JavaScript SPA uruchamia się i pobiera listę notatek
-    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
-    activate server
-    server-->>browser: JSON z listą notatek
-    deactivate server
-
-    Note over browser: JavaScript renderuje listę notatek dynamicznie
-
     Note over browser: Użytkownik wpisuje nową notatkę i klika "Save"
+
     browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
     activate server
     server-->>browser: JSON nowej notatki z ID i datą
     deactivate server
 
-    Note over browser: JavaScript dodaje nową notatkę do listy dynamicznie, bez przeładowania strony
+    Note over browser: JavaScript dodaje nową notatkę do listy, bez przeładowania strony
