@@ -40,9 +40,9 @@ const App = () => {
       <Total
         exercises1={exercises1}
         exercises2={exercises2}
-        exercises3={exercises3}
+        exercises3={exercises3} 
       />
-    </div>
+    </div> 
   )
 }
 
