@@ -28,6 +28,15 @@ const Total = (props) => {
   )
 }
 
+const Zadnie = () => {
+  return (
+    <div>
+      <h1>Zadanie Nauczyciela</h1>
+      <p>Krystian Dulny</p>
+    </div>
+  )
+}
+
 const App = () => {
   const course = 'Half Stack application development'
   const part1 = 'Fundamentals of React'
@@ -50,6 +59,7 @@ const App = () => {
         exercises2={exercises2}
         exercises3={exercises3}
       />
+      <Zadnie />
     </div>
   )
 }
