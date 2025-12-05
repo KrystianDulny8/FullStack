@@ -5,7 +5,7 @@ const Header = (props) => {
 const Part = (props) => {
   return (
     <p>
-      {props.part.name} {props.part.exercises}
+      {props.part.name} {props.part.exercises} {props.part.tekst}
     </p>
   )
 }
@@ -34,15 +34,18 @@ const App = () => {
     parts: [
       {
         name: 'Fundamentals of React',
-        exercises: 10
+        exercises: 10,
+        tekst: "tekst2"
       },
       {
         name: 'Using props to pass data',
-        exercises: 7
+        exercises: 7,
+        tekst: "tekst2"
       },
       {
         name: 'State of a component',
-        exercises: 14
+        exercises: 14,
+        tekst: "tekst2"
       }
     ]
   }
